@@ -15,7 +15,7 @@ router.get('/health', function (req, res) {
 });
 
 router.get('*', function (req, res) {
-  res.redirect(302, 'https://wenevergonnaclose.com/#tnc');
+  res.redirect(302, 'https://wenevergonnaclose.com/');
 });
 
 router.use(function (req, res) {

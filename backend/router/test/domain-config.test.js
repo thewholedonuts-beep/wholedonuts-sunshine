@@ -13,8 +13,8 @@ const { normalizeHostname, serviceForDomain, allDomains } = require('../domain-c
 const domainDetector = require('../middleware/domainDetector');
 
 describe('serviceForDomain', function () {
-  it('returns "landing" for wenevergonnaclose.com', function () {
-    assert.equal(serviceForDomain('wenevergonnaclose.com'), 'landing');
+  it('does not claim the canonical Universe domain', function () {
+    assert.equal(serviceForDomain('wenevergonnaclose.com'), null);
   });
 
   it('normalizes common host variants', function () {
@@ -61,10 +61,10 @@ describe('normalizeHostname', function () {
 });
 
 describe('allDomains', function () {
-  it('returns an array with at least 9 entries', function () {
+  it('returns an array with at least 8 entries', function () {
     const domains = allDomains();
     assert.ok(Array.isArray(domains));
-    assert.ok(domains.length >= 9);
+    assert.ok(domains.length >= 8);
   });
 
   it('every entry has a domain and service field', function () {

@@ -1,4 +1,4 @@
-# Deployment Guide — wenevergonnaclose.com
+# Deployment Guide — Whole Donuts Sunshine
 
 This document describes how to deploy the full Whole Donuts ecosystem.
 
@@ -48,12 +48,13 @@ Set the following in your hosting provider's secret store (never commit these):
 | `SHOPIFY_WEBHOOK_SECRET` | Shopify webhook signature secret |
 | `PRINTFUL_API_KEY` | Printful API token |
 
-### 2. GitHub Pages (public site)
+### 2. GitHub Pages (Sunshine companion)
 
 The public site is deployed by the scoped **Deploy public site to GitHub Pages**
-workflow after a change under `apps/public-site/`. The owner must first enable Pages,
-verify the generated URL and HTTPS, and complete the domain steps in
-[`CUTOVER.md`](CUTOVER.md). No public account or data-collection service is required.
+workflow after a change under `apps/public-site/`. Its repository Pages URL is
+Sunshine's independent public address. Do not configure it as the
+`wenevergonnaclose.com` custom domain; that canonical Universe gateway has separate
+hosting. No public account or data-collection service is required.
 
 ### 3. Merch API
 
