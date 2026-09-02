@@ -42,7 +42,6 @@ CMD ["node", "src/server.js"]
 # ── Stage 4: public site (nginx) ─────────────────────────────
 FROM nginx:1.27-alpine AS public-site
 COPY apps/public-site/ /usr/share/nginx/html/
-COPY apps/web/ /usr/share/nginx/html/landing/
 COPY --from=merch-web-builder /build/merch/web/.next/static /usr/share/nginx/html/merch/_next/static
 COPY infra/docker/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80

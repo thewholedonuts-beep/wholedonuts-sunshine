@@ -17,6 +17,7 @@ const shareStatus = document.getElementById("shareStatus");
 const pageShell = document.querySelector(".page-shell");
 
 const storageKey = "whole-donuts-landing-state";
+let memoryState = null;
 const fieldFigures = [
   { x: 6, y: 50, scale: 1, tilt: "-4deg", pose: "open" },
   { x: 14, y: 26, scale: 0.88, tilt: "2deg", pose: "signal" },
@@ -103,7 +104,12 @@ function renderCustomFigure(state) {
 }
 
 function saveState(state) {
-  localStorage.setItem(storageKey, JSON.stringify(state));
+  memoryState = state;
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(state));
+  } catch {
+    // Customization remains in memory when browser storage is unavailable.
+  }
 }
 
 function applyUrlState(state) {
@@ -134,9 +140,9 @@ function readState() {
   const fallback = { completed: false, pose: "open", accent: "#ffb95e", creation: "" };
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey));
-    return applyUrlState({ ...fallback, ...saved });
+    return applyUrlState({ ...fallback, ...memoryState, ...saved });
   } catch {
-    return applyUrlState(fallback);
+    return applyUrlState({ ...fallback, ...memoryState });
   }
 }
 

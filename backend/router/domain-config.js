@@ -16,6 +16,14 @@ const CONFIG_PATH = path.join(__dirname, 'config', 'domains.yaml');
 /** @type {{ domains: Array<{ domain: string, service: string, ecosystem?: string, type?: string }> }} */
 let _config = null;
 
+function normalizeHostname(hostname) {
+  return hostname
+    .toLowerCase()
+    .replace(/:\d+$/, '')
+    .replace(/\.$/, '')
+    .replace(/^www\./, '');
+}
+
 function loadConfig() {
   if (_config) return _config;
   const raw = fs.readFileSync(CONFIG_PATH, 'utf8');
@@ -29,11 +37,7 @@ function loadConfig() {
  * @returns {string|null}
  */
 function serviceForDomain(hostname) {
-  const normalizedHostname = hostname
-    .toLowerCase()
-    .replace(/:\d+$/, '')
-    .replace(/\.$/, '')
-    .replace(/^www\./, '');
+  const normalizedHostname = normalizeHostname(hostname);
   const { domains } = loadConfig();
   const entry = domains.find(function (d) {
     return d.domain === normalizedHostname;
@@ -49,4 +53,4 @@ function allDomains() {
   return loadConfig().domains;
 }
 
-module.exports = { serviceForDomain, allDomains };
+module.exports = { normalizeHostname, serviceForDomain, allDomains };

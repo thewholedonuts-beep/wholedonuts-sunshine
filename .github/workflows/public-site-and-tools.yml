@@ -27,9 +27,6 @@ jobs:
           node-version: 22
       - run: |
           node --check apps/public-site/app.js
-          node --check apps/public-site/auth-config.js
-          node --check apps/public-site/auth.js
-          node --check apps/public-site/storefront-config.js
           node --check apps/public-site/world/script.js
 
   domain-funnels:
