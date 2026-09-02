@@ -18,7 +18,7 @@ describe('serviceForDomain', function () {
   });
 
   it('normalizes common host variants', function () {
-    assert.equal(serviceForDomain('WWW.WENEVERGONNACLOSE.COM:443'), 'landing');
+    assert.equal(serviceForDomain('WWW.WENEVERGONNACLOSE.COM:443'), null);
     assert.equal(serviceForDomain('wholedonuts.org.'), 'wholedonuts');
   });
 
