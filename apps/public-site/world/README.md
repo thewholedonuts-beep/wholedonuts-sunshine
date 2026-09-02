@@ -1,19 +1,11 @@
-# Whole-Donuts
+# Whole Donuts World
 
-Project homepage: https://github.com/thewholedonuts-beep/Whole-Donuts
-
-> Note: the previous `wenevergonnaclose.com` reference was removed because the
-> domain is no longer reachable.
-
-This repository now ships a static landing page for the Whole DoNuts / +U
-experience.
+This interactive entry experience is part of the canonical
+[`thewholedonuts-beep/wholedonuts-sunshine`](https://github.com/thewholedonuts-beep/wholedonuts-sunshine)
+repository. It is deployed with the public-site artifact and leads visitors back
+to the +U community table.
 
 ## Local preview
 
-From `/home/runner/work/Whole-Donuts/Whole-Donuts`, run:
-
-```bash
-python3 -m http.server 4173
-```
-
-Then open `http://127.0.0.1:4173`.
+From the repository root, serve `apps/public-site/` with any static file server,
+then open the `world/` route.

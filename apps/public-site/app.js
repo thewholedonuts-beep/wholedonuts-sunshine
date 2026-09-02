@@ -2,6 +2,35 @@
 const branchLinks=[...document.querySelectorAll('[data-branch]')];
 const footerStore=document.querySelector('#branch-store');
 const branchLabels={awd:'Explore Whole Donuts',tnc:'Explore The Nurtured Chef'};
+const storefrontStatus=document.querySelector('#storefront-status');
+const storefrontActions=document.querySelector('#storefront-actions');
+const storefrontConfig=window.WHNUTZ_STOREFRONT_CONFIG||{};
+
+function validStorefrontUrl(value){
+  if(typeof value!=='string'||!value.trim())return null;
+  try{
+    const url=new URL(value.trim());
+    return url.protocol==='https:'&&url.hostname&&!url.username&&!url.password?url.href:null;
+  }catch(error){
+    return null;
+  }
+}
+
+function renderStorefrontHandoff(){
+  if(!storefrontStatus||!storefrontActions)return;
+  const storefrontUrl=validStorefrontUrl(storefrontConfig.storefrontUrl);
+  if(!storefrontUrl)return;
+  storefrontStatus.textContent='The Made by +U, 4 ALL shop is open in our separate storefront. Products, shipping, taxes, refunds, and checkout are handled there. Voluntary Cash App support remains separate and does not purchase merchandise.';
+  const storefrontCta=document.createElement('a');
+  storefrontCta.className='button primary';
+  storefrontCta.href=storefrontUrl;
+  storefrontCta.target='_blank';
+  storefrontCta.rel='noopener noreferrer';
+  storefrontCta.textContent='Shop Made by +U, 4 ALL';
+  storefrontActions.append(storefrontCta);
+}
+
+renderStorefrontHandoff();
 
 function syncBranch(){
   const id=location.hash.slice(1);

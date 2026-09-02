@@ -1,6 +1,8 @@
 # +U — unified web entry
 
-This directory is the GitHub Pages artifact for **wenevergonnaclose.com**.
+This directory is the GitHub Pages artifact for **wenevergonnaclose.com** in
+the canonical [`thewholedonuts-beep/wholedonuts-sunshine`](https://github.com/thewholedonuts-beep/wholedonuts-sunshine)
+repository.
 
 ## Experience map
 
@@ -25,5 +27,6 @@ The persistent side rail keeps TNC and AWD available throughout the entry experi
 ## GitHub Pages
 
 The repository workflow uploads this directory after a `main`-branch change. Its
-`CNAME` file is intentionally inside the artifact. Enable GitHub Pages and complete
-the custom-domain cutover only after reviewing [the external setup guide](../../docs/CUTOVER.md).
+`CNAME` file is intentionally inside the artifact, so it intentionally preserves
+`wenevergonnaclose.com` for this GitHub Pages deployment. Enable GitHub Pages and
+complete the custom-domain cutover only after reviewing [the external setup guide](../../docs/CUTOVER.md).
