@@ -4,8 +4,8 @@
  * routes/wholedonuts.js — Whole Donuts ecosystem routes.
  *
  * In production this router is mounted when a wholedonuts.* or
- * wholedonuts.store domain is detected. Extend with real handlers as the
- * apps/web and apps/merch applications are built out.
+ * wholedonuts domain is detected. Until a dedicated application is live,
+ * visitors return to the canonical Whole Donuts entry.
  */
 
 const express = require('express');
@@ -13,6 +13,10 @@ const router  = express.Router();
 
 router.get('/health', function (req, res) {
   res.json({ status: 'ok', ecosystem: 'donuts', domain: req.detectedDomain });
+});
+
+router.get('*', function (req, res) {
+  res.redirect(302, 'https://wenevergonnaclose.com/#awd');
 });
 
 router.use(function (req, res) {

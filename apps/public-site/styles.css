@@ -78,15 +78,17 @@ main{margin-left:var(--rail)}
 .hero{background:radial-gradient(circle at 80% 10%,#e4ad3740,transparent 28%)}
 .eyebrow{font-size:.75rem;font-weight:900;letter-spacing:.22em}
 .hero h1,
-.branch h2{
+.branch h2,
+.participation>h2{
   font:700 clamp(3rem,8vw,7rem)/.95 Georgia,serif;
   max-width:12ch;
   margin:.3rem 0 1.5rem
 }
 .lede{font-size:clamp(1.1rem,2vw,1.5rem);max-width:46rem}
 .branch p{max-width:42rem;font-size:1.25rem;line-height:1.6}
-.branch:nth-of-type(2){background:#ecdde1}
-.branch:nth-of-type(3){background:#dfe9de}
+#make{background:#ecdde1}
+#awd{background:#dfe9de}
+#tnc{background:#e8d9b8}
 .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin:1rem 0 2rem}
 .button{
   padding:.9rem 1.1rem;
@@ -196,6 +198,53 @@ footer a{color:var(--ink);font-weight:900}
   cursor:pointer
 }
 .welcome-gate.complete{background:var(--green)}
+.participation>p{max-width:48rem;font-size:1.15rem;line-height:1.6}
+.crumb-workshop,
+.award-signin,
+.member-greeting{
+  width:min(100%,52rem);
+  margin-top:1.5rem;
+  padding:1.25rem;
+  border:2px solid var(--ink);
+  border-radius:1rem;
+  background:var(--cream)
+}
+.crumb-workshop h3,
+.award-signin h3{font:700 1.8rem Georgia,serif;margin:.25rem 0}
+.crumb-workshop form{display:grid;gap:.65rem;margin-top:1rem}
+.crumb-workshop label,
+.award-signin label{font-weight:800}
+.crumb-workshop select,
+.crumb-workshop input[type="url"],
+.crumb-workshop textarea,
+.award-signin input{
+  width:100%;
+  padding:.8rem;
+  border:2px solid var(--ink);
+  border-radius:.7rem;
+  background:#fff;
+  color:var(--ink);
+  font:inherit
+}
+.crumb-workshop textarea{resize:vertical}
+.crumb-consent{display:flex;gap:.6rem;align-items:flex-start}
+.crumb-workshop button,
+.award-signin button{
+  border:0;
+  border-radius:.7rem;
+  padding:.8rem 1rem;
+  background:var(--green);
+  color:#fff;
+  font-weight:900;
+  cursor:pointer
+}
+.crumb-workshop button{justify-self:start}
+.crumb-note{font-size:.85rem}
+.crumb-note a{color:var(--ink);font-weight:900}
+.award-signin-actions{display:flex;gap:.7rem;margin-top:.4rem}
+.award-signin button{background:var(--ink)}
+.member-greeting{border-color:var(--green);background:#dfe9de}
+.member-greeting strong{display:block;font:700 1.5rem Georgia,serif;margin-bottom:.3rem}
 .noscript-note{margin:0;padding:1rem 1.2rem;background:var(--berry);color:#fff;font-weight:700}
 .noscript-note a{color:#fff}
 @media(max-width:760px){
@@ -208,5 +257,6 @@ footer a{color:var(--ink);font-weight:900}
   .world-frame{min-height:720px;height:82vh;border-radius:1rem}
   .answer-grid{grid-template-columns:1fr 1fr}
   .answer-grid--two{grid-template-columns:1fr}
+  .award-signin-actions{display:grid}
   footer{left:var(--rail)}
 }

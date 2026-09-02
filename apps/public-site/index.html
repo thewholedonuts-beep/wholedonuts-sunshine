@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Whole Donuts — walk into the field, answer three questions, and find your seat at the table or the counter.">
+  <meta property="og:title" content="Whole Donuts | Make your figure">
+  <meta property="og:description" content="Make a stick figure, pass the invitation on, and bring a useful crumb to the table.">
+  <meta property="og:url" content="https://wenevergonnaclose.com/">
+  <meta property="og:type" content="website">
   <title>Whole Donuts | Walk In</title>
   <link rel="stylesheet" href="styles.css?v=entry1">
 </head>
@@ -20,6 +24,7 @@
   <aside class="rail" aria-label="Whole Donuts menu">
     <a class="mark" href="#home" aria-label="Home">+U</a>
     <nav>
+      <a href="#make" data-branch="make"><span>MAKE</span><small>Pass it on</small></a>
       <a href="#awd" data-branch="awd"><span>WHOLE</span><small>Whole Donuts</small></a>
       <a href="#tnc" data-branch="tnc"><span>TNC</span><small>The Nurtured Chef</small></a>
     </nav>
@@ -80,6 +85,59 @@
       </section>
     </section>
 
+    <section id="make" class="panel participation" aria-labelledby="make-title">
+      <p class="eyebrow">THE QUIET INVITATION</p>
+      <h2 id="make-title">Draw yourself in. Pass it on.</h2>
+      <p>Make a stick figure in the field, give your next positive project a name, and share one invitation. No spam, no hidden tracking, and no need to explain the whole thing.</p>
+      <div class="actions">
+        <a class="button primary" href="world/?completed=1">Make and share a figure</a>
+        <a class="button store" href="https://github.com/thewholedonuts-beep/wholedonuts-sunshine/blob/main/apps/public-site/CONTRIBUTING.md">Build with us on GitHub ↗</a>
+      </div>
+
+      <section class="award-signin" id="award-signin" hidden aria-labelledby="award-signin-title">
+        <p class="eyebrow">MEMBER SIGN-IN</p>
+        <h3 id="award-signin-title">Your place is saved.</h3>
+        <p id="award-signin-copy">Enter your email to receive a private sign-in link and continue where you left off.</p>
+        <form id="award-signin-form">
+          <label for="award-email">Email address</label>
+          <div class="award-signin-actions">
+            <input id="award-email" name="email" type="email" autocomplete="email" required>
+            <button type="submit">Send my sign-in link</button>
+          </div>
+        </form>
+        <p id="award-signin-status" aria-live="polite"></p>
+      </section>
+
+      <section class="member-greeting" id="member-greeting" hidden aria-live="polite">
+        <strong id="member-greeting-title">Welcome back.</strong>
+        <span id="member-greeting-copy">Your place at the table is here when you are ready.</span>
+      </section>
+
+      <section class="crumb-workshop" aria-labelledby="crumb-workshop-title">
+        <p class="eyebrow">THE CRUMB WORKSHOP</p>
+        <h3 id="crumb-workshop-title">Bring something useful to the counter.</h3>
+        <p>Share an original lesson, design, resource, or project idea. Every crumb enters a private review queue before it can become part of the public experience.</p>
+        <form id="crumb-form">
+          <label for="crumb-category">Where could it help?</label>
+          <select id="crumb-category" name="category" required>
+            <option value="">Choose a place</option>
+            <option value="world">Stick-figure world</option>
+            <option value="library">+U Library</option>
+            <option value="ambassador">Ambassador Path</option>
+            <option value="support">Community support</option>
+          </select>
+          <label for="crumb-source">Source or project link, if there is one</label>
+          <input id="crumb-source" name="source" type="url" placeholder="https://example.com">
+          <label for="crumb-content">Your crumb</label>
+          <textarea id="crumb-content" name="content" rows="5" maxlength="2000" required placeholder="What is useful, who could it help, and how should someone begin?"></textarea>
+          <label class="crumb-consent"><input id="crumb-rights" name="rights" type="checkbox" required> I made this or have permission to share it.</label>
+          <button type="submit">Send this crumb for review</button>
+        </form>
+        <p id="crumb-status" aria-live="polite"></p>
+        <p class="crumb-note">Do not include private or harmful information. Read the <a href="CRUMB_PROTOCOL.md">crumb protocol</a>.</p>
+      </section>
+    </section>
+
     <section id="awd" class="panel branch" aria-labelledby="awd-title">
       <p class="eyebrow">WHOLE DONUTS · THE COUNTER</p>
       <h2 id="awd-title">Every appetite belongs.</h2>
@@ -105,6 +163,8 @@
 
   <footer><span>+U · Whole Donuts</span><a id="branch-store" href="#home">Open the menu</a></footer>
   <noscript><p class="noscript-note">JavaScript is off. Use the links above to navigate to <a href="#awd">Whole Donuts</a> or <a href="#tnc">The Nurtured Chef</a>.</p></noscript>
-  <script src="app.js?v=entry1"></script>
+  <script src="auth-config.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script src="app.js?v=entry2"></script>
 </body>
 </html>

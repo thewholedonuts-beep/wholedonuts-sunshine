@@ -15,6 +15,11 @@ router.get('/health', function (req, res) {
   res.json({ status: 'ok', service: 'merch', domain: req.detectedDomain });
 });
 
+router.get('*', function (req, res) {
+  const branch = req.detectedDomain === 'thenutur3dchef.com' ? 'tnc' : 'awd';
+  res.redirect(302, `https://wenevergonnaclose.com/#${branch}`);
+});
+
 router.use(function (req, res) {
   res.status(404).json({ error: 'Not found', service: 'merch' });
 });

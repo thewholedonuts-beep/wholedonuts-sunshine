@@ -1,7 +1,7 @@
 // Branch nav highlighting and footer link
 const branchLinks=[...document.querySelectorAll('[data-branch]')];
 const footerStore=document.querySelector('#branch-store');
-const branchLabels={awd:'Explore Whole Donuts',tnc:'Explore The Nurtured Chef'};
+const branchLabels={make:'Make and share a figure',awd:'Explore Whole Donuts',tnc:'Explore The Nurtured Chef'};
 
 function syncBranch(){
   const id=location.hash.slice(1);
