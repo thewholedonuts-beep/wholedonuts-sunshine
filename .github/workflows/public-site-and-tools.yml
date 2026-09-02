@@ -26,8 +26,8 @@ jobs:
         with:
           node-version: 22
       - run: |
-        node --check apps/public-site/app.js
-        node --check apps/public-site/world/script.js
+          node --check apps/public-site/app.js
+          node --check apps/public-site/world/script.js
 
   domain-funnels:
     runs-on: ubuntu-latest
