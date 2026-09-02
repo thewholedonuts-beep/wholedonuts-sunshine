@@ -16,12 +16,6 @@ syncBranch();
 const dateLabel=document.querySelector('#daily-date');
 if(dateLabel)dateLabel.textContent=new Intl.DateTimeFormat(undefined,{weekday:'long',month:'long',day:'numeric'}).format(new Date());
 
-// localStorage helpers
-const mem=new Map();
-function safeGet(k){try{return localStorage.getItem(k)}catch(e){return mem.get(k)??null}}
-function safeSet(k,v){try{localStorage.setItem(k,v)}catch(e){mem.set(k,String(v))}}
-function safeRemove(k){try{localStorage.removeItem(k)}catch(e){mem.delete(k)}}
-
 // 3-question welcome gate
 const gate=document.querySelector('#welcome-gate');
 const steps=[...document.querySelectorAll('[data-question]')];
@@ -47,7 +41,6 @@ function finishWelcome({scroll=true}={}){
   welcomeResult.hidden=false;
   gate.classList.add('complete');
   showQuestion(4);
-  safeSet('plusu-age',answers.age||'adult');
   if(scroll)welcomeResult.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
@@ -60,19 +53,11 @@ document.querySelectorAll('[data-answer]').forEach(btn=>{
   });
 });
 
-// Restore saved age choice so repeat visitors skip straight to the result
-const savedAge=safeGet('plusu-age');
-if(savedAge==='kid'||savedAge==='adult'){
-  answers.age=savedAge;
-  finishWelcome({scroll:false});
-}else{
-  showQuestion(1);
-}
+showQuestion(1);
 
 // Restart button
 const restart=document.querySelector('#restart-welcome');
 if(restart)restart.addEventListener('click',()=>{
-  safeRemove('plusu-age');
   Object.keys(answers).forEach(k=>delete answers[k]);
   welcomeResult.hidden=true;
   gate.classList.remove('complete');

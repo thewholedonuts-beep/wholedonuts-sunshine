@@ -7,7 +7,6 @@ This document describes how to deploy the full Whole Donuts ecosystem.
 ## Prerequisites
 
 - Docker ≥ 24 and Docker Compose ≥ 2.20
-- A Supabase project (for auth + database)
 - A Shopify store (for merch)
 - A Printful account (for print-on-demand fulfillment)
 - Domain DNS pointed at your hosting server
@@ -43,8 +42,6 @@ Set the following in your hosting provider's secret store (never commit these):
 |---|---|
 | `DATABASE_URL` | PostgreSQL connection string with `?sslmode=require` |
 | `JWT_SECRET` | Random 32+ char secret for API tokens |
-| `SUPABASE_URL` | Your Supabase project URL |
-| `SUPABASE_SERVICE_KEY` | Supabase service role key |
 | `SHOPIFY_STORE_DOMAIN` | `your-store.myshopify.com` |
 | `SHOPIFY_ADMIN_TOKEN` | Shopify Admin API token |
 | `SHOPIFY_STOREFRONT_TOKEN` | Shopify Storefront API token |
@@ -53,8 +50,10 @@ Set the following in your hosting provider's secret store (never commit these):
 
 ### 2. GitHub Pages (public site)
 
-The public site deploys automatically on every push to `main` via the
-**Deploy to production** workflow. No manual steps required.
+The public site is deployed by the scoped **Deploy public site to GitHub Pages**
+workflow after a change under `apps/public-site/`. The owner must first enable Pages,
+verify the generated URL and HTTPS, and complete the domain steps in
+[`CUTOVER.md`](CUTOVER.md). No public account or data-collection service is required.
 
 ### 3. Merch API
 
@@ -77,13 +76,6 @@ psql $DATABASE_URL -f data/postgres/migrations/002_deployment_readiness.sql
 psql $DATABASE_URL -f data/postgres/migrations/003_verified_payment_attribution.sql
 ```
 
-Supabase migrations (in `apps/public-site/supabase/migrations/`) are applied
-via the Supabase dashboard or CLI:
-
-```bash
-supabase db push
-```
-
 ---
 
 ## CI/CD Pipeline
@@ -94,7 +86,7 @@ supabase db push
 | `public-site-and-tools.yml` | PR / push to `main` | Syntax-check JS, test Go domain-funnels |
 | `universe.yml` | PR / push to `main` | Build + test universe Go CLIs |
 | `deploy-pages.yml` | push to `main` | Deploy public site to GitHub Pages |
-| `deploy-production.yml` | push to `main` | Full test suite + deploy to production |
+| `deploy-production.yml` | push to `main` | Validate service code without publishing the public site |
 
 ---
 

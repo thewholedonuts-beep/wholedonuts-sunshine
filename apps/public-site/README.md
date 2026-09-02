@@ -13,14 +13,10 @@ The persistent side rail keeps TNC and AWD available throughout the entry experi
 
 ## Public behavior
 
-- The landing page includes Movement brochure structure, print guidance, and public contact information so the brochure can point directly back to the site.
-- The `?u=` query parameter restores a previously issued +U pass into the local browser storage for returning visits.
-- QR images are rendered through a third-party QR image service only when a visitor explicitly requests one from the page.
-- The Made by +U, 4 ALL Goods Window is browse-only until a live storefront is explicitly configured. Cash App support is voluntary and separate from merchandise purchases.
-
-## Storefront handoff
-
-`storefront-config.js` is public, contains no credentials, and ships with an empty `storefrontUrl`. Keep it empty until the separate Shopify + Printful storefront is deployed and verified. Then set it to that storefront's full `https://` URL. The page validates the URL before adding the external **Shop Made by +U, 4 ALL** link; empty, malformed, `http`, or credential-bearing URLs leave the Goods Window browse-only.
+- The landing page provides only local interactive navigation and voluntary native sharing.
+- It has no accounts, analytics, tracking, forms, remote scripts, or data-collection path.
+- The browser can retain an optional figure customization locally; it is never sent by the site. A visitor can explicitly include it in an invitation URL.
+- The live destination is the canonical entry; no storefront, payment checkout, or other unverified destination is represented here.
 
 ## GitHub Pages
 

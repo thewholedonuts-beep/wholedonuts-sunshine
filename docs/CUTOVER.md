@@ -10,12 +10,12 @@ of the deployed artifact. Verify the custom domain and HTTPS status in GitHub be
 making the required DNS change at the domain provider. Do not redirect or retire the
 existing site until the new Pages URL is confirmed.
 
-## Supabase and public-site auth
+## Public-site privacy
 
-Create or select the Supabase project, apply the tracked migrations in
-`apps/public-site/supabase/migrations/`, configure allowed redirect URLs for the
-final Pages domain, and place only the intended public client configuration in the
-public-site configuration template. Keep service-role keys out of this repository.
+The public site does not use Supabase, accounts, forms, analytics, or a contribution
+queue. Do not configure a client key or tracking service for it. If a prior deployment
+used a Supabase project, revoke its keys, disable public authentication, and delete or
+secure collected data before relaunching.
 
 ## Merch services
 

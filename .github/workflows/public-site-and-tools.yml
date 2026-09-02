@@ -25,12 +25,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: |
-          node --check apps/public-site/app.js
-          node --check apps/public-site/auth-config.js
-          node --check apps/public-site/auth.js
-          node --check apps/public-site/storefront-config.js
-          node --check apps/public-site/world/script.js
+      -       run: |
+        node --check apps/public-site/app.js
+        node --check apps/public-site/world/script.js
 
   domain-funnels:
     runs-on: ubuntu-latest
