@@ -1,11 +1,16 @@
 # Whole Donuts World
 
-This interactive entry experience is part of the canonical
-[`thewholedonuts-beep/wholedonuts-sunshine`](https://github.com/thewholedonuts-beep/wholedonuts-sunshine)
-repository. It is deployed with the public-site artifact and leads visitors back
-to the +U community table.
+This directory supplies the local stick-figure experience embedded by the Sunshine
+companion. It returns visitors to `https://wenevergonnaclose.com/` and has no
+network dependency or data-collection path.
 
 ## Local preview
 
-From the repository root, serve `apps/public-site/` with any static file server,
-then open the `world/` route.
+From this repository:
+
+```bash
+cd apps/public-site
+python3 -m http.server 4173
+```
+
+Then open `http://127.0.0.1:4173/world/`.

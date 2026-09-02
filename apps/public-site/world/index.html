@@ -6,8 +6,12 @@
     <title>Whole DoNuts | +U</title>
     <meta
       name="description"
-      content="Enter the Whole DoNuts field and begin the +U adventure."
+      content="Make a Whole DoNuts stick figure and pass the quiet invitation on."
     />
+    <meta property="og:title" content="A figure is waiting for +U">
+    <meta property="og:description" content="Make your figure, name what you are creating, and pass the invitation on.">
+    <meta property="og:url" content="https://thewholedonuts-beep.github.io/wholedonuts-sunshine/world/">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -20,7 +24,7 @@
 
       <header class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">WHOLE DONUTS · +U</p>
+          <p class="eyebrow">github.com/thewholedonuts-beep/wholedonuts-sunshine</p>
           <h1>Walk into the field. Find your place in the +U.</h1>
           <p class="lede">
             A crowd of obvious stick figures gathers at the edge of something
@@ -31,8 +35,8 @@
             <button id="enterButton" class="primary-button" type="button">
               Step underground +
             </button>
-            <a id="continueButton" class="continue-button" href="../#home" target="_parent" hidden>
-              Enter the community table
+            <a id="continueButton" class="continue-button" href="https://wenevergonnaclose.com/" target="_parent" rel="noopener noreferrer" referrerpolicy="no-referrer" hidden>
+              Return to the Whole Donuts Universe
             </a>
             <p id="progressText" class="progress-text">
               The first figure is waiting for you.
@@ -184,8 +188,8 @@
 
           <div id="unlockState" class="unlock-state locked">
             <div class="unlock-copy">
-              <strong>Locked</strong>
-              <span>Take the first step underground to wake it up.</span>
+              <strong id="unlockLabel">Locked</strong>
+              <span id="unlockDescription">Take the first step underground to wake it up.</span>
             </div>
 
             <form id="customizer" class="customizer" autocomplete="off">
@@ -210,6 +214,18 @@
             <div class="home-figure-card">
               <p>Your homepage figure</p>
               <div id="customFigure" class="custom-figure" aria-hidden="true"></div>
+            </div>
+
+            <div class="share-figure" id="shareFigure">
+              <strong>Pass the quiet invitation on.</strong>
+              <span>Your link carries the pose, color, and project name you chose. It contains no personal identifier or tracking code.</span>
+              <div class="share-actions">
+                <button id="shareButton" class="primary-button" type="button">Share my figure</button>
+                <button id="copyButton" class="continue-button" type="button">Copy invitation</button>
+                <a id="redditShare" class="continue-button" href="https://www.reddit.com/submit" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Share to Reddit</a>
+              </div>
+              <p id="shareStatus" class="share-status" aria-live="polite"></p>
+              <a class="contribute-link" href="https://github.com/thewholedonuts-beep/wholedonuts-sunshine/blob/main/apps/public-site/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Want to add more? Bring a figure or idea to the project on GitHub.</a>
             </div>
           </div>
         </section>

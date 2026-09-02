@@ -78,15 +78,17 @@ main{margin-left:var(--rail)}
 .hero{background:radial-gradient(circle at 80% 10%,#e4ad3740,transparent 28%)}
 .eyebrow{font-size:.75rem;font-weight:900;letter-spacing:.22em}
 .hero h1,
-.branch h2{
+.branch h2,
+.participation>h2{
   font:700 clamp(3rem,8vw,7rem)/.95 Georgia,serif;
   max-width:12ch;
   margin:.3rem 0 1.5rem
 }
 .lede{font-size:clamp(1.1rem,2vw,1.5rem);max-width:46rem}
 .branch p{max-width:42rem;font-size:1.25rem;line-height:1.6}
-.branch:nth-of-type(2){background:#ecdde1}
-.branch:nth-of-type(3){background:#dfe9de}
+#make{background:#ecdde1}
+#awd{background:#dfe9de}
+#tnc{background:#e8d9b8}
 .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin:1rem 0 2rem}
 .branch .storefront-status{max-width:42rem;font-size:1rem}
 .storefront-actions{margin-top:0}
@@ -198,6 +200,8 @@ footer a{color:var(--ink);font-weight:900}
   cursor:pointer
 }
 .welcome-gate.complete{background:var(--green)}
+.participation>p{max-width:48rem;font-size:1.15rem;line-height:1.6}
+.participation-note{max-width:48rem;font-size:.95rem;line-height:1.5}
 .noscript-note{margin:0;padding:1rem 1.2rem;background:var(--berry);color:#fff;font-weight:700}
 .noscript-note a{color:#fff}
 @media(max-width:760px){

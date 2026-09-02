@@ -9,11 +9,17 @@
 const { describe, it } = require('node:test');
 const assert = require('node:assert/strict');
 
-const { serviceForDomain, allDomains } = require('../domain-config');
+const { normalizeHostname, serviceForDomain, allDomains } = require('../domain-config');
+const domainDetector = require('../middleware/domainDetector');
 
 describe('serviceForDomain', function () {
-  it('returns "landing" for wenevergonnaclose.com', function () {
-    assert.equal(serviceForDomain('wenevergonnaclose.com'), 'landing');
+  it('does not claim the canonical Universe domain', function () {
+    assert.equal(serviceForDomain('wenevergonnaclose.com'), null);
+  });
+
+  it('normalizes common host variants', function () {
+    assert.equal(serviceForDomain('WWW.WENEVERGONNACLOSE.COM:443'), null);
+    assert.equal(serviceForDomain('wholedonuts.org.'), 'wholedonuts');
   });
 
   it('returns "wholedonuts" for wholedonuts.org', function () {
@@ -37,11 +43,28 @@ describe('serviceForDomain', function () {
   });
 });
 
+describe('domainDetector', function () {
+  it('normalizes the stored domain as well as the selected service', function () {
+    const req = { headers: { host: 'WWW.THENUTUR3DCHEF.COM:443' } };
+    domainDetector(req, {}, function () {});
+
+    assert.equal(req.detectedDomain, 'thenutur3dchef.com');
+    assert.equal(req.detectedService, 'merch');
+  });
+});
+
+describe('normalizeHostname', function () {
+  it('normalizes host variants consistently', function () {
+    assert.equal(normalizeHostname('WWW.WENEVERGONNACLOSE.COM:443'), 'wenevergonnaclose.com');
+    assert.equal(normalizeHostname('wholedonuts.org.'), 'wholedonuts.org');
+  });
+});
+
 describe('allDomains', function () {
-  it('returns an array with at least 9 entries', function () {
+  it('returns an array with at least 8 entries', function () {
     const domains = allDomains();
     assert.ok(Array.isArray(domains));
-    assert.ok(domains.length >= 9);
+    assert.ok(domains.length >= 8);
   });
 
   it('every entry has a domain and service field', function () {

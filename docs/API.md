@@ -114,16 +114,6 @@ Requests are verified against `SHOPIFY_WEBHOOK_SECRET`.
 
 ---
 
-## Supabase / Auth
-
-Authentication is handled by Supabase Auth. The public site uses the
-Supabase JS client directly for sign-up, sign-in, and session management.
-
-See `apps/public-site/auth-config.js` and `apps/public-site/auth.js` for
-the client-side auth configuration.
-
----
-
 ## Universe CLIs
 
 The universe tools are Go binaries available after building with `make` in

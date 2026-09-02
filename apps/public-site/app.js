@@ -1,36 +1,7 @@
 // Branch nav highlighting and footer link
 const branchLinks=[...document.querySelectorAll('[data-branch]')];
 const footerStore=document.querySelector('#branch-store');
-const branchLabels={awd:'Explore Whole Donuts',tnc:'Explore The Nurtured Chef'};
-const storefrontStatus=document.querySelector('#storefront-status');
-const storefrontActions=document.querySelector('#storefront-actions');
-const storefrontConfig=window.WHNUTZ_STOREFRONT_CONFIG||{};
-
-function validStorefrontUrl(value){
-  if(typeof value!=='string'||!value.trim())return null;
-  try{
-    const url=new URL(value.trim());
-    return url.protocol==='https:'&&url.hostname&&!url.username&&!url.password?url.href:null;
-  }catch(error){
-    return null;
-  }
-}
-
-function renderStorefrontHandoff(){
-  if(!storefrontStatus||!storefrontActions)return;
-  const storefrontUrl=validStorefrontUrl(storefrontConfig.storefrontUrl);
-  if(!storefrontUrl)return;
-  storefrontStatus.textContent='The Made by +U, 4 ALL shop is open in our separate storefront. Products, shipping, taxes, refunds, and checkout are handled there. Voluntary Cash App support remains separate and does not purchase merchandise.';
-  const storefrontCta=document.createElement('a');
-  storefrontCta.className='button primary';
-  storefrontCta.href=storefrontUrl;
-  storefrontCta.target='_blank';
-  storefrontCta.rel='noopener noreferrer';
-  storefrontCta.textContent='Shop Made by +U, 4 ALL';
-  storefrontActions.append(storefrontCta);
-}
-
-renderStorefrontHandoff();
+const branchLabels={make:'Make and share a figure',awd:'Explore Whole Donuts',tnc:'Explore The Nurtured Chef'};
 
 function syncBranch(){
   const id=location.hash.slice(1);
@@ -44,12 +15,6 @@ syncBranch();
 // Date label
 const dateLabel=document.querySelector('#daily-date');
 if(dateLabel)dateLabel.textContent=new Intl.DateTimeFormat(undefined,{weekday:'long',month:'long',day:'numeric'}).format(new Date());
-
-// localStorage helpers
-const mem=new Map();
-function safeGet(k){try{return localStorage.getItem(k)}catch(e){return mem.get(k)??null}}
-function safeSet(k,v){try{localStorage.setItem(k,v)}catch(e){mem.set(k,String(v))}}
-function safeRemove(k){try{localStorage.removeItem(k)}catch(e){mem.delete(k)}}
 
 // 3-question welcome gate
 const gate=document.querySelector('#welcome-gate');
@@ -67,16 +32,15 @@ function showQuestion(n){
 }
 
 function finishWelcome({scroll=true}={}){
-  const dest=answers.age==='kid'?'#tnc':'#awd';
-  const destLabel=answers.age==='kid'?'The Nurtured Chef — the Table':'Whole Donuts — the Counter';
+  const dest='https://wenevergonnaclose.com/';
+  const destLabel='the Whole Donuts Universe';
   steps.forEach(s=>s.hidden=true);
   if(welcomeResultTitle)welcomeResultTitle.textContent='Your seat is ready at '+destLabel+'.';
   if(welcomeResultCopy)welcomeResultCopy.textContent='Head through when you\'re ready.';
-  if(welcomeGo){welcomeGo.href=dest;welcomeGo.textContent='Go to '+destLabel+' ↓'}
+  if(welcomeGo){welcomeGo.href=dest;welcomeGo.textContent='Enter '+destLabel+' ↗'}
   welcomeResult.hidden=false;
   gate.classList.add('complete');
   showQuestion(4);
-  safeSet('plusu-age',answers.age||'adult');
   if(scroll)welcomeResult.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
@@ -89,19 +53,11 @@ document.querySelectorAll('[data-answer]').forEach(btn=>{
   });
 });
 
-// Restore saved age choice so repeat visitors skip straight to the result
-const savedAge=safeGet('plusu-age');
-if(savedAge==='kid'||savedAge==='adult'){
-  answers.age=savedAge;
-  finishWelcome({scroll:false});
-}else{
-  showQuestion(1);
-}
+showQuestion(1);
 
 // Restart button
 const restart=document.querySelector('#restart-welcome');
 if(restart)restart.addEventListener('click',()=>{
-  safeRemove('plusu-age');
   Object.keys(answers).forEach(k=>delete answers[k]);
   welcomeResult.hidden=true;
   gate.classList.remove('complete');
