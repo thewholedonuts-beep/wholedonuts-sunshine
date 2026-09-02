@@ -4,11 +4,10 @@ This repository is ready for review and does not perform a live deployment.
 
 ## GitHub Pages
 
-After merging, enable GitHub Pages in the repository settings with **GitHub Actions**
-as the source. The Pages workflow uploads `apps/public-site/`, so its `CNAME` is part
-of the deployed artifact. Verify the custom domain and HTTPS status in GitHub before
-making the required DNS change at the domain provider. Do not redirect or retire the
-existing site until the new Pages URL is confirmed.
+GitHub Pages is enabled with **GitHub Actions** as the source. The Pages workflow
+uploads `apps/public-site/` to its independent repository Pages URL. Do not add a
+`CNAME` file or point `wenevergonnaclose.com` at this deployment: that domain is the
+canonical Whole Donuts Universe and must retain its own gateway and hosting.
 
 ## Public-site privacy
 

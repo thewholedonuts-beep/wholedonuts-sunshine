@@ -3,11 +3,6 @@
 # No credentials, IPs, DNS record operations, or deployment commands are stored here.
 
 domains:
-  # ── Entry point ────────────────────────────────────────
-  - domain: wenevergonnaclose.com
-    service: landing
-    description: Main gateway — stick figure intro + ecosystem splitter
-
   # ── Whole Donuts ecosystem ─────────────────────────────
   - domain: wholedonuts.org
     service: wholedonuts

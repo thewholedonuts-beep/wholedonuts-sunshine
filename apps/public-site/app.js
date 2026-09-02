@@ -32,12 +32,12 @@ function showQuestion(n){
 }
 
 function finishWelcome({scroll=true}={}){
-  const dest=answers.age==='kid'?'#tnc':'#awd';
-  const destLabel=answers.age==='kid'?'The Nurtured Chef — the Table':'Whole Donuts — the Counter';
+  const dest='https://wenevergonnaclose.com/';
+  const destLabel='the Whole Donuts Universe';
   steps.forEach(s=>s.hidden=true);
   if(welcomeResultTitle)welcomeResultTitle.textContent='Your seat is ready at '+destLabel+'.';
   if(welcomeResultCopy)welcomeResultCopy.textContent='Head through when you\'re ready.';
-  if(welcomeGo){welcomeGo.href=dest;welcomeGo.textContent='Go to '+destLabel+' ↓'}
+  if(welcomeGo){welcomeGo.href=dest;welcomeGo.textContent='Enter '+destLabel+' ↗'}
   welcomeResult.hidden=false;
   gate.classList.add('complete');
   showQuestion(4);

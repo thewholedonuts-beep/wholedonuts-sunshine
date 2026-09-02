@@ -2,7 +2,7 @@
 
 | Area | Purpose |
 |---|---|
-| `apps/public-site/` | Public wenevergonnaclose.com entry served by GitHub Pages, Docker, and the domain router, including the shareable stick-figure World, `CNAME`, templates, and GitHub contribution guidance. |
+| `apps/public-site/` | Independent GitHub Pages Sunshine companion, including the local stick-figure World and links back to the canonical Universe. |
 | `apps/landing/` | Preserved gateway prototype; not served in production. |
 | `apps/web/` | Preserved earlier landing-page source; excluded from production serving. |
 | `apps/merch/api/` | Express API for sponsor merchandise operations and integration webhooks. |
@@ -21,16 +21,13 @@
 ## Ecosystem overview
 
 ```
-wenevergonnaclose.com  (canonical public entry)
-├── LEFT  — Whole Donuts ecosystem
-│   wholedonuts.{org,app,me,pro,buzz}  → service: wholedonuts
-│   wholedonuts.store                  → service: merch
-└── RIGHT — Nurtured Chef ecosystem
-    thenurturedchef.{com,foundation}   → service: nurturedchef
-    thenutur3dchef.com                 → service: merch
+wenevergonnaclose.com  (canonical Whole Donuts Universe)
+         ↑
+Sunshine GitHub Pages companion
+         ↑
+configured brand-domain router fallbacks
 ```
 
 Domain → service mappings live in `backend/router/config/domains.yaml`. The router
-serves `apps/public-site/` for the canonical domain and sends browser requests for
-brand domains back to the matching public-entry branch until dedicated applications
-are deployed.
+does not claim the canonical domain. When deliberately deployed for a configured
+brand domain, it sends browser requests to the verified canonical Universe root.

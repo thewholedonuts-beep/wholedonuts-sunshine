@@ -1,6 +1,7 @@
 # Whole Donuts: the whole picture
 
-Whole Donuts is a place to turn lived experience, practical knowledge, creative work, and community support into a next step that someone else can use. It starts at `wenevergonnaclose.com`, the one public entry for the +U experience.
+Sunshine is an optional local companion to the Whole Donuts Universe. Start at
+`wenevergonnaclose.com`; Sunshine does not replace its gateway.
 
 ## Start where you are
 
@@ -10,12 +11,9 @@ There is no single kind of person this is for. A maker, artist, trade profession
 
 | Piece | What it does |
 |---|---|
-| Whole Donuts world | The interactive first entry. Visitors create a figure, name a positive project, and step into the wider experience. |
-| +U Library | Free, editable guides for taking a next step, sharing something useful, and building a table around a project or cause. |
-| Community Counter | A voluntary three-question guide that helps visitors choose a branch, pace, and purpose for the visit. |
-| Ambassador Path | A route for people who want to grow a skill, lead a project, share experience, or support others. |
+| Whole Donuts Universe | The canonical gateway and source of wider experience. |
+| Sunshine World | An optional local stick-figure companion that returns visitors to the canonical gateway. |
 | Contribution route | A GitHub pull request route for original accessible improvements, templates, and stick-figure ideas. |
-| Whole Donuts support | A voluntary Cash App support option. Financial support helps sustain Whole Donuts growth; time, skills, materials, and connections are also meaningful contributions. |
 
 ## What is a crumb?
 
@@ -33,16 +31,11 @@ Share only what you have the right to share. Do not include someone else's priva
 
 ## How people enter and grow
 
-1. **Enter openly.** Use the world, community counter, and free library without an account.
-2. **Choose a next step.** Use a template, create something, or follow one useful lead.
+1. **Start at the canonical gateway.** Open `wenevergonnaclose.com`.
+2. **Choose Sunshine deliberately.** Use its optional local World without an account.
 3. **Contribute deliberately.** Open a GitHub pull request when you have original material that is ready to share.
-4. **Become an ambassador.** Build with the community or carry the learning independently. An ambassador can be creative, skilled-trade, community, or business focused.
 
 Recognition marks a completed path. It never measures a person's worth, rank, or right to belong.
-
-## How to support the work
-
-Support can happen in different ways: make a financial gift, volunteer time, offer a practical skill, provide materials, share a connection, or tell someone about a useful resource. The current financial-support link is separate from merchandise purchases. Future merchandise orders will use a Printful-connected storefront with clear product, shipping, tax, and refund terms.
 
 ## Our promise
 
