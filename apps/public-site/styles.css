@@ -90,8 +90,6 @@ main{margin-left:var(--rail)}
 #awd{background:#dfe9de}
 #tnc{background:#e8d9b8}
 .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin:1rem 0 2rem}
-.branch .storefront-status{max-width:42rem;font-size:1rem}
-.storefront-actions{margin-top:0}
 .button{
   padding:.9rem 1.1rem;
   border:2px solid var(--ink);
