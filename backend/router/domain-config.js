@@ -29,9 +29,14 @@ function loadConfig() {
  * @returns {string|null}
  */
 function serviceForDomain(hostname) {
+  const normalizedHostname = hostname
+    .toLowerCase()
+    .replace(/:\d+$/, '')
+    .replace(/\.$/, '')
+    .replace(/^www\./, '');
   const { domains } = loadConfig();
   const entry = domains.find(function (d) {
-    return d.domain === hostname;
+    return d.domain === normalizedHostname;
   });
   return entry ? entry.service : null;
 }

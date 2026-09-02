@@ -3,11 +3,17 @@ const customFigure = document.getElementById("customFigure");
 const enterButton = document.getElementById("enterButton");
 const progressText = document.getElementById("progressText");
 const unlockState = document.getElementById("unlockState");
+const unlockLabel = document.getElementById("unlockLabel");
+const unlockDescription = document.getElementById("unlockDescription");
 const customizer = document.getElementById("customizer");
 const poseSelect = document.getElementById("poseSelect");
 const accentInput = document.getElementById("accentInput");
 const creationInput = document.getElementById("creationInput");
 const continueButton = document.getElementById("continueButton");
+const shareButton = document.getElementById("shareButton");
+const copyButton = document.getElementById("copyButton");
+const redditShare = document.getElementById("redditShare");
+const shareStatus = document.getElementById("shareStatus");
 const pageShell = document.querySelector(".page-shell");
 
 const storageKey = "whole-donuts-landing-state";
@@ -116,6 +122,11 @@ function applyUrlState(state) {
     state.accent = accent;
   }
 
+  const creation = params.get("creating");
+  if (creation) {
+    state.creation = creation.slice(0, 100);
+  }
+
   return state;
 }
 
@@ -139,9 +150,72 @@ function applyState(state) {
       : "The tunnel remembers you. Your figure is now part of the field."
     : "The first figure is waiting for you.";
   unlockState.classList.toggle("locked", !state.completed);
+  unlockLabel.textContent = state.completed ? "Awake" : "Locked";
+  unlockDescription.textContent = state.completed
+    ? "Shape the figure, then pass the invitation on."
+    : "Take the first step underground to wake it up.";
   pageShell.classList.toggle("completed", state.completed);
   continueButton.hidden = !state.completed;
   renderCustomFigure(state);
+  updateShareLinks(state);
+}
+
+function buildShareUrl(state) {
+  const url = new URL(".", window.location.href);
+  url.search = "";
+  url.hash = "";
+  url.searchParams.set("completed", "1");
+  url.searchParams.set("pose", state.pose);
+  url.searchParams.set("accent", state.accent);
+  if (state.creation) {
+    url.searchParams.set("creating", state.creation);
+  }
+  return url.toString();
+}
+
+function shareText(state) {
+  return state.creation
+    ? `I drew myself into +U while creating "${state.creation}". Draw yourself in.`
+    : "I drew myself into +U. Draw yourself in.";
+}
+
+function updateShareLinks(state) {
+  const shareUrl = buildShareUrl(state);
+  redditShare.href = `https://www.reddit.com/submit?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(shareText(state))}`;
+}
+
+async function copyInvitation() {
+  const state = readState();
+  const invitation = `${shareText(state)} ${buildShareUrl(state)}`;
+  try {
+    await navigator.clipboard.writeText(invitation);
+    shareStatus.textContent = "Invitation copied. Pass it to one person or community where it belongs.";
+  } catch {
+    shareStatus.textContent = "Copy was blocked by this browser. Use the Share button instead.";
+  }
+}
+
+async function shareInvitation() {
+  const state = readState();
+  const shareData = {
+    title: "A figure is waiting for +U",
+    text: shareText(state),
+    url: buildShareUrl(state)
+  };
+
+  if (!navigator.share) {
+    await copyInvitation();
+    return;
+  }
+
+  try {
+    await navigator.share(shareData);
+    shareStatus.textContent = "Invitation shared.";
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      shareStatus.textContent = "Sharing did not open. Copy the invitation instead.";
+    }
+  }
 }
 
 function completeJourney() {
@@ -160,6 +234,8 @@ customizer.addEventListener("input", () => {
   saveState(state);
   applyState(state);
 });
+shareButton.addEventListener("click", shareInvitation);
+copyButton.addEventListener("click", copyInvitation);
 
 renderField();
 applyState(readState());

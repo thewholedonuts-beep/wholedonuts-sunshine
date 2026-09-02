@@ -14,6 +14,10 @@ router.get('/health', function (req, res) {
   res.json({ status: 'ok', ecosystem: 'chef', domain: req.detectedDomain });
 });
 
+router.get('*', function (req, res) {
+  res.redirect(302, 'https://wenevergonnaclose.com/#tnc');
+});
+
 router.use(function (req, res) {
   res.status(404).json({ error: 'Not found', ecosystem: 'chef' });
 });

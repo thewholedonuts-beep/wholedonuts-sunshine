@@ -2,9 +2,9 @@
 
 | Area | Purpose |
 |---|---|
-| `apps/landing/` | wenevergonnaclose.com gateway — stick figure homepage, "+U"/BEPZITIV animation, and dual-ecosystem split-screen routing. |
-| `apps/public-site/` | Static public site and GitHub Pages artifact, including `CNAME`, World, templates, Supabase migrations, and public auth/storefront configuration. |
-| `apps/web/` | Main landing page (index.html + styles + script) for wenevergonnaclose.com. |
+| `apps/public-site/` | Canonical wenevergonnaclose.com entry served by GitHub Pages, Docker, and the domain router, including the shareable stick-figure World, reviewed contributions, `CNAME`, templates, Supabase migrations, and public auth/storefront configuration. |
+| `apps/landing/` | Preserved gateway prototype; not served in production. |
+| `apps/web/` | Preserved earlier landing-page source; Docker exposes it only under `/landing/`. |
 | `apps/merch/api/` | Express API for sponsor merchandise operations and integration webhooks. |
 | `apps/merch/web/` | Next.js merch dashboard. |
 | `apps/universe/` | Go ecosystem tools: domain orchestrator, funnel CLI, analytics dashboard, network and scaling orchestrators, domain config packages, and deployment workflows. |
@@ -21,7 +21,7 @@
 ## Ecosystem overview
 
 ```
-wenevergonnaclose.com  (landing gateway)
+wenevergonnaclose.com  (canonical public entry)
 ├── LEFT  — Whole Donuts ecosystem
 │   wholedonuts.{org,app,me,pro,buzz}  → service: wholedonuts
 │   wholedonuts.store                  → service: merch
@@ -30,9 +30,10 @@ wenevergonnaclose.com  (landing gateway)
     thenutur3dchef.com                 → service: merch
 ```
 
-Domain → service mappings live in `backend/router/config/domains.yaml`.
-The landing `public/gateway.js` also contains a client-side fast-path redirect
-for the same 9 domains.
+Domain → service mappings live in `backend/router/config/domains.yaml`. The router
+serves `apps/public-site/` for the canonical domain and sends browser requests for
+brand domains back to the matching public-entry branch until dedicated applications
+are deployed.
 
 ## Provenance
 

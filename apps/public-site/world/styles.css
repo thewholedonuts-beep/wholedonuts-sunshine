@@ -292,8 +292,10 @@ h1 {
 }
 
 .unlock-state.locked .customizer,
-.unlock-state.locked .home-figure-card {
+.unlock-state.locked .home-figure-card,
+.unlock-state.locked .share-figure {
   opacity: 0.42;
+  pointer-events: none;
 }
 
 .unlock-copy {
@@ -362,14 +364,44 @@ h1 {
   stroke-linecap: round;
 }
 
+.share-figure {
+  display: grid;
+  gap: 0.65rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.share-figure span,
+.share-status {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.share-actions button,
+.share-actions a {
+  margin: 0;
+  min-height: 44px;
+}
+
+.share-status {
+  min-height: 1.5rem;
+  margin: 0;
+}
+
+.contribute-link {
+  color: var(--glow);
+  font-weight: 700;
+}
+
 .completed .unlock-state {
   border-color: rgba(255, 185, 94, 0.3);
   box-shadow: inset 0 0 0 1px rgba(255, 185, 94, 0.16);
-}
-
-.completed .unlock-copy strong::after {
-  content: " — awake";
-  color: var(--glow);
 }
 
 @keyframes drift {
