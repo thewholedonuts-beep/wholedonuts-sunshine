@@ -16,7 +16,8 @@ router.get('/health', function (req, res) {
 });
 
 router.get('*', function (req, res) {
-  res.redirect(302, 'https://wenevergonnaclose.com/');
+  const branch = req.detectedDomain === 'thenutur3dchef.com' ? 'tnc' : 'awd';
+  res.redirect(302, `https://wenevergonnaclose.com/#${branch}`);
 });
 
 router.use(function (req, res) {
