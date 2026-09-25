@@ -1,4 +1,4 @@
-function normalizeOrderItems(items) {
+ function normalizeOrderItems(items) {
   if (!Array.isArray(items) || !items.length) {
     throw new Error('At least one order item is required.');
   }
