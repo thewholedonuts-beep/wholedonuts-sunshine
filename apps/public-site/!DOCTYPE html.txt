@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whole Donuts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="donut-glow"></div>
+
+    <div class="container">
+        <h1 class="title">How are U doing?</h1>
+
+        <div class="walkin-button">
+            <a href="#" id="walkIn">Walk In</a>
+        </div>
+
+        <div id="identitySelect" class="hidden">
+            <h2>Choose your guide</h2>
+            <button class="id-btn" data-id="chef">Chef</button>
+            <button class="id-btn" data-id="professor">Professor</button>
+        </div>
+
+        <div id="experience" class="hidden">
+            <h2 id="expTitle"></h2>
+
+            <button class="exp-btn" data-exp="feel">Feel</button>
+            <button class="exp-btn" data-exp="remember">Remember</button>
+            <button class="exp-btn" data-exp="step">Helpful Step</button>
+            <button class="exp-btn" data-exp="crumb">Crumb</button>
+        </div>
+
+        <div id="stillStanding" class="hidden">
+            <h2>Still Standing</h2>
+            <p>You made it. You’re here. You’re still standing.</p>
+        </div>
+
+        <div class="donation">
+            <a href="support.html" class="donate-btn">$WHOLEDONTZ</a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
