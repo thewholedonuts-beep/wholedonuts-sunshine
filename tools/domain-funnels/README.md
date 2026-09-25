@@ -1,4 +1,4 @@
-# Domain funnel configuration validator
+ # Domain funnel configuration validator
 
 This tool validates **inactive, sanitized examples** only. It has no registrar
 client, credentials, DNS record operations, deployment command, or automated
