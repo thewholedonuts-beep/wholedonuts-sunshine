@@ -1,4 +1,4 @@
-const { Pool } = require('pg');
+ const { Pool } = require('pg');
 const { isProduction } = require('./environment');
 
 const connectionString = process.env.DATABASE_URL;
