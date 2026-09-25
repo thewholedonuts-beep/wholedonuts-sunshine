@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+ const crypto = require('crypto');
 const { isProduction } = require('../config/environment');
 
 const SAFE_METHODS = new Set(['GET', 'HEAD', 'OPTIONS']);
