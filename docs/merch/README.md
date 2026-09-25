@@ -1,4 +1,4 @@
-# Whole Donuts Merch Platform
+ # Whole Donuts Merch Platform
 
 Sponsor merchandise operations built with a Next.js dashboard, Express API, PostgreSQL, Shopify, and Printful fulfillment. Shopify is the checkout and order system of record; PostgreSQL stores Whole Donuts sponsor, referral, and operational data.
 
