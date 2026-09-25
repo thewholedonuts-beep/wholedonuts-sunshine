@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+ const crypto = require('crypto');
 
 function verifyShopifyWebhook(rawBody, signature, secret) {
   if (!Buffer.isBuffer(rawBody) || !signature || !secret) {
