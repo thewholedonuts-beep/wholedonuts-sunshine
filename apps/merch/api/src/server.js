@@ -1,4 +1,4 @@
-const { validateProductionEnvironment } = require('./config/environment');
+ const { validateProductionEnvironment } = require('./config/environment');
 
 validateProductionEnvironment();
 const app = require('./app');
