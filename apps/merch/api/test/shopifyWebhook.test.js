@@ -1,4 +1,4 @@
-const assert = require('node:assert/strict');
+ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const test = require('node:test');
 const { verifyShopifyWebhook } = require('../src/services/shopifyWebhook');
