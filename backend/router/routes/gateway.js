@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 /**
  * routes/gateway.js — Landing / wenevergonnaclose.com routes.
