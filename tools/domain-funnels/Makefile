@@ -1,4 +1,4 @@
-.PHONY: help build test clean validate
+ .PHONY: help build test clean validate
 
 help:
 	@echo "Domain funnel configuration validator"
