@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+ const crypto = require('crypto');
 const CryptoJS = require('crypto-js');
 const { query } = require('../config/database');
 
