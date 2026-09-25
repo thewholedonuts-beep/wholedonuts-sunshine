@@ -1,4 +1,4 @@
-function printfulConfig() {
+ function printfulConfig() {
   const token = process.env.PRINTFUL_API_KEY;
   if (!token) {
     throw new Error('Printful credentials are not configured.');
