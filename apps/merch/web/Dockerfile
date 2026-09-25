@@ -1,4 +1,4 @@
-FROM node:22-alpine AS dependencies
+ FROM node:22-alpine AS dependencies
 
 WORKDIR /app
 COPY apps/merch/web/package.json apps/merch/web/package-lock.json ./
