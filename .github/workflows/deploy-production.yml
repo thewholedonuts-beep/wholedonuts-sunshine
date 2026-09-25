@@ -1,4 +1,4 @@
-name: Validate production services
+ name: Validate production services
 
 on:
   push:
