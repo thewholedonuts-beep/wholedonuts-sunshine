@@ -1,5 +1,5 @@
 document.getElementById("walkIn").onclick = () => {
-    document.getElementById("identitySelect").classList.remove("hidden");
+     document.getElementById("identitySelect").classList.remove("hidden");
 };
 
 document.querySelectorAll(".id-btn").forEach(btn => {
