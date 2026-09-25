@@ -1,4 +1,4 @@
-const { withTransaction } = require('../config/database');
+ const { withTransaction } = require('../config/database');
 const { calculateEffortScore, applyTierDiscountCap } = require('../utils/effortScore');
 
 async function recordVerifiedReferralConversion({ code, orderId, total, integrationEventId }) {
