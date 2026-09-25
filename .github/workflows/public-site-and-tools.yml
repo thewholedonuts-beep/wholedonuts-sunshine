@@ -1,4 +1,4 @@
-name: Validate public site and tools
+ name: Validate public site and tools
 
 on:
   pull_request:
