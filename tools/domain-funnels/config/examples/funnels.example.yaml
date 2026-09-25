@@ -1,4 +1,4 @@
-# Public example only. This repository cannot register domains, modify DNS, or deploy funnels.
+ # Public example only. This repository cannot register domains, modify DNS, or deploy funnels.
 domains:
   - name: example
     tld: invalid
