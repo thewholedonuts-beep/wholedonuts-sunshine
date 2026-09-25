@@ -1,4 +1,4 @@
-# apps/landing — Wenevergonnaclose Gateway
+ # apps/landing — Wenevergonnaclose Gateway
 
 Static landing experience for **wenevergonnaclose.com**: the stick figure
 welcome, the "+U" / BEPZITIV animation, and the split-screen ecosystem picker.
