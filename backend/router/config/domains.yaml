@@ -1,4 +1,4 @@
-# Domain → service routing map
+ # Domain → service routing map
 # All values are offline configuration only.
 # No credentials, IPs, DNS record operations, or deployment commands are stored here.
 
