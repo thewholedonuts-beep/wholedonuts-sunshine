@@ -1,4 +1,4 @@
- # Deployment Guide — wenevergonnaclose.com
+  # Deployment Guide — wenevergonnaclose.com
 
 This document describes how to deploy the full Whole Donuts ecosystem.
 
