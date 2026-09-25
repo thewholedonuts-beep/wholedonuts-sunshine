@@ -1,4 +1,4 @@
-import { ProductCustomizer } from '@/components/ProductCustomizer';
+ import { ProductCustomizer } from '@/components/ProductCustomizer';
 import type { Product } from '@/components/ProductCustomizer';
 import { apiRequest } from '@/lib/api';
 
