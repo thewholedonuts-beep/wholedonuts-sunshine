@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 /**
  * middleware/domainDetector.js
