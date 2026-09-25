@@ -1,4 +1,4 @@
-name: Validate merch platform
+ name: Validate merch platform
 
 on:
   pull_request:
