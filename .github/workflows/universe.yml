@@ -1,4 +1,4 @@
-name: Validate universe tools
+ name: Validate universe tools
 
 on:
   pull_request:
