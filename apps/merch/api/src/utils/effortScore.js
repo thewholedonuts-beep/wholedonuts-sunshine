@@ -1,4 +1,4 @@
-function calculateEffortScore({ clicks = 0, shares = 0, conversions = 0, usageCount = 0 }) {
+ function calculateEffortScore({ clicks = 0, shares = 0, conversions = 0, usageCount = 0 }) {
   const numericClicks = Number(clicks) || 0;
   const numericShares = Number(shares) || 0;
   const numericConversions = Number(conversions) || 0;
