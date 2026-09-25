@@ -1,4 +1,4 @@
-const assert = require('node:assert/strict');
+ const assert = require('node:assert/strict');
 const test = require('node:test');
 const referralRouter = require('../src/routes/referral');
 
