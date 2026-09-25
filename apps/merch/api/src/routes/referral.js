@@ -1,4 +1,4 @@
-const express = require('express');
+ const express = require('express');
 const { query } = require('../config/database');
 const { referralValidationLimiter } = require('../middleware/rateLimiter');
 const { hashIp, validateReferralCodeFormat } = require('../utils/referralCode');
