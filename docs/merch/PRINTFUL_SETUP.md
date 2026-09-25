@@ -1,4 +1,4 @@
-# Printful fulfillment setup
+ # Printful fulfillment setup
 
 Connect Printful to the same Shopify store so Shopify remains the checkout and order record while Printful handles product fulfillment. Map every Shopify product/variant to its Printful template before opening customer checkout.
 
