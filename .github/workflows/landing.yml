@@ -1,4 +1,4 @@
-name: Validate landing gateway and domain router
+ name: Validate landing gateway and domain router
 
 on:
   pull_request:
