@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 /**
  * routes/nurturedchef.js — Nurtured Chef ecosystem routes.
