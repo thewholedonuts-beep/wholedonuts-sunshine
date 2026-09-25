@@ -1,4 +1,4 @@
-type SponsorStatsProps = {
+ type SponsorStatsProps = {
   clicks: number;
   shares: number;
   conversions: number;
