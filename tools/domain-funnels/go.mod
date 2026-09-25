@@ -1,4 +1,4 @@
-module github.com/thewholedonuts-beep/wholedonuts-sunshine/tools/domain-funnels
+ module github.com/thewholedonuts-beep/wholedonuts-sunshine/tools/domain-funnels
 
 go 1.21
 
