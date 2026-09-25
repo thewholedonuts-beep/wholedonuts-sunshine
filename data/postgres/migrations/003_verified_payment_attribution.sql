@@ -1,4 +1,4 @@
-ALTER TABLE referral_events
+ ALTER TABLE referral_events
   ADD COLUMN IF NOT EXISTS verified_payment BOOLEAN NOT NULL DEFAULT false;
 
 ALTER TABLE referral_events
