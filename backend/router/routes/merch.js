@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 /**
  * routes/merch.js — Shared merch-store routes.
