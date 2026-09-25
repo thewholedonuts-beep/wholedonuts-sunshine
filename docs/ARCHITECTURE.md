@@ -1,4 +1,4 @@
-# Canonical repository architecture
+ # Canonical repository architecture
 
 | Area | Purpose |
 |---|---|
