@@ -1,4 +1,4 @@
-# Bring something to the table
+ # Bring something to the table
 
 Whole Donuts welcomes original stick figures, accessible improvements, useful templates, and practical community ideas.
 
