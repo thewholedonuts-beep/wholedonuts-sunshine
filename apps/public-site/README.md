@@ -1,4 +1,4 @@
-# +U — unified web entry
+ # +U — unified web entry
 
 This directory is the GitHub Pages artifact for **wenevergonnaclose.com**.
 
