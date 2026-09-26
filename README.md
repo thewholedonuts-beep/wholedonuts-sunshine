@@ -1,4 +1,4 @@
-# Whole Donuts Sunshine
+ # Whole Donuts Sunshine
 
 Launch companion repository for **wenevergonnaclose.com**. It contains the public entry, separately operated merch and tooling examples, infrastructure, and domain-routing configuration.
 
