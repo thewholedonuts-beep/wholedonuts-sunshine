@@ -1,4 +1,4 @@
-# Whole Donuts World
+ # Whole Donuts World
 
 This directory supplies the local stick-figure experience embedded by the public
 entry at `https://wenevergonnaclose.com/world/`. It has no network dependency or
