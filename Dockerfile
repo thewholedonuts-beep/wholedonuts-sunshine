@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+ # syntax=docker/dockerfile:1
 # ────────────────────────────────────────────────────────────
 # Multi-stage production build for wenevergonnaclose.com
 # ────────────────────────────────────────────────────────────
